@@ -1,4 +1,4 @@
-import logoPlume from "../assets/images/logoPlume.png";
+import Logo from "../assets/images/Logo.png";
 
 import "../styles/Navbar.css";
 
@@ -10,7 +10,7 @@ export default function Navbar() {
         <a href="#publish">Publier</a>
       </div>
       <div className="nav-logo">
-        <img src={logoPlume} alt="Logo" />
+        <img src={Logo} alt="Logo" />
       </div>
       <div className="nav-right">
         <a href="#signup">Inscription</a>

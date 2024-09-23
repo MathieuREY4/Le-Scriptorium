@@ -23,8 +23,12 @@ export default function Header() {
         <div className="header-title">
           <h1>LE SCRIBLIUM</h1>
         </div>
-        <p>Lorem</p>
-        <div className="search-bar">
+        <p>
+          Le Scribliard est un amoureux des mots. La plume est le prolongement
+          de son âme. Il l'utilise comme un scalpel pour inciser les consciences
+          et opérer son subcoscient. En ce lieu, vous deviendrez un Scribliard .
+        </p>
+        <div className="HeaderSearch-bar">
           <input type="text" placeholder="Rechercher..." />
           <button type="button">Go</button>
         </div>

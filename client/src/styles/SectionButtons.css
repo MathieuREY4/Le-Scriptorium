@@ -14,11 +14,14 @@
 }
 
 .section-buttons .button-card {
-  background-color: #fffbe7;
+  /* background-color: #fffbe7; */
+  background-image: url("../assets/images/cover-bois2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 10px;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 2px 2px 2px 2px #bababa;
+  box-shadow: 2px 2px 2px 2px #5c3508;
 }
 
 .section-buttons .button-card > button {
@@ -27,8 +30,11 @@
   padding: 1rem;
   width: 110px;
   justify-content: center;
-  background-color: #5c3508;
-  color: #fff;
+  background-color: #fffbe7;
+  /* background-image: url("../assets/images/cover-bois3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  color: black;
   cursor: pointer;
   border-radius: 8px;
 }
