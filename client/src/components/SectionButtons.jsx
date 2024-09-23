@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import "../styles/SectionButtons.css";
 
 import romansImage from "../assets/images/romansImage.png";
@@ -9,26 +10,26 @@ import settingsImage from "../assets/images/settingsImage.png";
 export default function SectionButtons() {
   return (
     <section className="section-buttons">
-      <div className="button-card">
+      <motion.div className="button-card" drag>
         <img src={romansImage} alt="Romans" />
         <button type="button">Romans</button>
-      </div>
-      <div className="button-card">
+      </motion.div>
+      <motion.div className="button-card" drag>
         <img src={poemsImage} alt="Poèmes" />
         <button type="button">Poèmes</button>
-      </div>
-      <div className="button-card">
+      </motion.div>
+      <motion.div className="button-card" drag>
         <img src={quotesImage} alt="Citations" />
         <button type="button">Citations</button>
-      </div>
-      <div className="button-card">
+      </motion.div>
+      <motion.div className="button-card" drag>
         <img src={accountImage} alt="Mon compte" />
         <button type="button">Mon compte</button>
-      </div>
-      <div className="button-card">
+      </motion.div>
+      <motion.div className="button-card" drag>
         <img src={settingsImage} alt="Paramètres" />
         <button type="button">Paramètres</button>
-      </div>
+      </motion.div>
     </section>
   );
 }
