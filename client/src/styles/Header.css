@@ -91,7 +91,7 @@
   text-align: center;
   margin-top: 20px;
   font-size: 1rem;
-  color: #5c3508;
+  color: #fff;
 }
 
 Header p {
@@ -109,10 +109,10 @@ Header p {
     font-size: 3rem;
     background: linear-gradient(
       90deg,
-      rgba(222, 184, 135, 1) 0%,
+      rgb(255, 255, 255) 0%,
       rgba(155, 100, 50, 1) 40%,
-      rgba(101, 67, 33, 1) 60%,
-      rgba(155, 100, 50, 1) 100%
+      rgb(56, 35, 14) 60%,
+      rgb(253, 253, 253) 100%
     );
     background-size: 300%;
     background-clip: text;

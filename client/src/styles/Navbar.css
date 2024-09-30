@@ -20,10 +20,10 @@
 
 .navbar a {
   text-decoration: none;
-  /* background-color: #5c3508; */
-  background-image: url("../assets/images/cover-bois3.jpg");
+  background-color: #fffbe7;
+  /* background-image: url("../assets/images/cover-bois3.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   padding: 10px;
   color: black;
   text-transform: uppercase;
