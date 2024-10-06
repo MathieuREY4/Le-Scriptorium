@@ -1,0 +1,39 @@
+.book-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-image: url(../assets/images/cover-bois1.jpg);
+}
+
+.carousel-arrow {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
+
+.book-card {
+  min-width: 150px;
+  max-width: 200px;
+  height: 200px;
+  background-image: url(../assets/images/cover-bois3.jpg);
+  background-size: cover;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}

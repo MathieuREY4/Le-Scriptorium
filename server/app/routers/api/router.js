@@ -8,9 +8,11 @@ const router = express.Router();
 
 const itemsRouter = require("./items/router");
 const userRouter = require("./userRouter");
+const bookRouter = require("./bookRouter");
 
 router.use("/items", itemsRouter);
 router.use("/user", userRouter);
+router.use("/book", bookRouter);
 
 /* ************************************************************************* */
 

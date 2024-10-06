@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+  background-image: url("../assets/images/cover-bois.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: #fffbe7; */
+  /* box-shadow: 2px 2px 2px 2px #bababa; */
+  border-radius: 8px;
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    justify-content: space-around;
+  }
+}
+
+.navbar a {
+  text-decoration: none;
+  background-color: #fffbe7;
+  padding: 10px;
+  color: black;
+  text-transform: uppercase;
+  border-radius: 8px;
+}
+
+.navbar a:active {
+  transform: scale(1.03);
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-logo img {
+  height: auto;
+  max-height: 100px;
+  width: auto;
+  max-width: 150px;
+}

@@ -1,0 +1,66 @@
+.section-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.section-buttons img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.section-buttons .button-card {
+  /* background-color: #fffbe7; */
+  background-image: url("../assets/images/cover-bois2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 2px 2px 2px 2px #bababa;
+}
+
+.section-buttons .button-card > button {
+  display: flex;
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 110px;
+  justify-content: center;
+  background-color: #fffbe7;
+  /* background-image: url("../assets/images/cover-bois3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  color: black;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+@media (min-width: 1024px) {
+  .section-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+  }
+  .section-buttons .button-card:hover {
+    transform: scale(1.003);
+  }
+  .section-buttons .button-card {
+    transform: scale(0.8);
+    transition: 0.3s ease;
+  }
+
+  .section-buttons img {
+    width: 240px;
+    height: 160px;
+  }
+
+  .section-buttons .button-card > button {
+    width: 140px;
+    padding: 0.8rem;
+    text-transform: uppercase;
+  }
+}
