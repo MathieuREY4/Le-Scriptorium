@@ -1,0 +1,61 @@
+.article-scrib {
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 5rem;
+}
+
+.title {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  color: #fff; /* Couleur initiale du texte */
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease,
+    transform 0.3s ease; /* Animation pour la couleur, l'ombre, et la transformation */
+}
+
+.title:hover {
+  color: #ffcc00; /* Change la couleur au survol */
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000; /* Contour noir plus épais */
+  transform: translateY(-5px); /* Fait "sauter" le titre vers le haut */
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .text {
+  color: #fff;
+}
+
+.side-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.side-image:hover {
+  transform: translateY(-30px);
+}
+
+.action-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px 2px 2px #bababa;
+  cursor: pointer;
+}
+
+.action-button:active {
+  transform: scale(1.03);
+}

@@ -13,8 +13,12 @@ export default function Navbar() {
 
   const handleLogout = async () => {
     if (authContext?.logout) {
-      await authContext.logout();
-      navigate("/");
+      try {
+        await authContext.logout();
+        navigate("/");
+      } catch (err) {
+        console.error("Erreur lors de la déconnexion:", err);
+      }
     }
   };
 
@@ -41,8 +45,8 @@ export default function Navbar() {
             </button>
             <Link to="/user">
               <img
-                src={`https://api.dicebear.com/6.x/initials/svg?seed=${authContext.user.fullname}`}
-                alt={authContext.user.fullname}
+                src={`https://api.dicebear.com/6.x/initials/svg?seed=${authContext.user.pseudo}`}
+                alt={authContext.user.pseudo}
                 className="user-avatar"
               />
             </Link>
