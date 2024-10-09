@@ -30,7 +30,7 @@ CREATE TABLE Book (
 INSERT INTO Book (title, cover_image, genre, synopsis, purchase_link, id_user)
 VALUES (
     'Chimère', 
-    'Couverture-Chimère', 
+    'chimère.jpg', 
     'Thriller, Science-fiction, Horreur', 
     'Dans l’obscurité de la ville de Golza, la nuit devient le théâtre de l\'horreur. "Chimère" nous plonge dans un monde où les cicatrices du passé et la quête de justice se croisent pour donner naissance à une danse macabre. Fallen, une figure mystérieuse et redoutée, sème la terreur à travers la ville avec une cruauté implacable. Son objectif est aussi précis que brutal : faire payer ceux qu\'il juge responsables des injustices qui l\'ont détruit. Alors que ses actes sanglants provoquent l\'alarme parmi les autorités, une unité spéciale est déployée pour capturer ce spectre implacable, ignorant qu\'ils se trouvent face à un ennemi dont la détermination est alimentée par un passé torturé et une vengeance sans compromis. À travers des scènes de violence brutale et de manipulations psychologiques, "Chimère" révèle une ville où l’innocence et la culpabilité se confrontent dans un tourbillon de vengeance et de rédemption. Les lignes entre le bien et le mal s’estompent alors que chaque personnage est confronté à ses propres limites et à la vérité cachée derrière les façades de la société. Plongez dans ce récit où chaque personnage, qu\'il soit traqué ou traqueur, est pris dans les mailles d\'une toile de vengeance et de désespoir. "Chimère" est une exploration sombre de la nature humaine, une quête de justice où le prix de la vérité peut être plus dévastateur que le silence.', 
     NULL, 

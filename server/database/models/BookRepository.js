@@ -21,8 +21,17 @@ class bookRepository extends AbstractRepository {
   }
 
   async readAll() {
-    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
-    return rows;
+    try {
+      const query = `
+        SELECT id_book, title, cover_image, genre, synopsis 
+        FROM ${this.table}`;
+
+      const [rows] = await this.database.query(query);
+      return rows; // Renvoie les résultats de la requête
+    } catch (error) {
+      console.error("Error reading books:", error); // Journalise les erreurs éventuelles
+      throw new Error("Could not retrieve books"); // Lance une erreur si la requête échoue
+    }
   }
 
   async read(id) {

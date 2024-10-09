@@ -6,11 +6,12 @@ import { AuthProvider } from "./context/authContext";
 import App from "./App";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import BooksPage from "./pages/Books";
+import Books from "./pages/Books";
 import PoemsPage from "./pages/Poem";
 import Home from "./pages/Home";
 
 import "./styles/Main.css";
+import booksLoader from "./services/booksUsersLoader";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/books",
-        element: <BooksPage />,
+        element: <Books />,
+        loader: booksLoader,
       },
       {
         path: "/poems",
