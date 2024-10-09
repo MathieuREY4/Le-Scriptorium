@@ -1,9 +1,14 @@
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #ffefc1;
+  padding: 20px 40px;
+  min-height: 200px;
+  background-image: url(../assets/images/cover-bois2.jpg);
+  background-size: cover;
+  object-fit: cover;
+  color: #fff; /* Garder la couleur blanche pour les écrans mobiles */
+  font-size: 2rem;
 }
 
 .newsletter {
@@ -12,6 +17,69 @@
 }
 
 .newsletter input {
-  padding: 5px;
+  padding: 10px;
   margin-right: 5px;
+  border-radius: 8px;
+}
+
+/* Effet Néon pour les <p> en version PC */
+.footer p {
+  color: transparent; /* Rendre le texte transparent */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 165, 0, 1) 0%,
+    rgba(255, 80, 0, 1) 50%,
+    rgba(255, 165, 0, 1) 100%
+  );
+  background-clip: text; /* Appliquer le dégradé au texte */
+  -webkit-background-clip: text; /* Pour la compatibilité avec Safari */
+  text-shadow:
+    0 0 5px rgba(255, 165, 0, 1),
+    0 0 10px rgba(255, 165, 0, 1),
+    0 0 15px rgba(255, 80, 0, 1),
+    0 0 20px rgba(255, 30, 0, 1);
+}
+
+/* Effet Néon pour le bouton "Go" */
+.newsletter button {
+  color: transparent; /* Rendre le texte transparent */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 165, 0, 1) 0%,
+    rgba(255, 80, 0, 1) 50%,
+    rgba(255, 165, 0, 1) 100%
+  );
+  background-clip: text; /* Appliquer le dégradé au texte */
+  -webkit-background-clip: text; /* Pour la compatibilité avec Safari */
+  text-shadow:
+    0 0 5px rgba(255, 165, 0, 1),
+    0 0 10px rgba(255, 165, 0, 1),
+    0 0 15px rgba(255, 80, 0, 1),
+    0 0 20px rgba(255, 30, 0, 1);
+  border: none; /* Retirer le bord du bouton */
+  cursor: pointer; /* Changer le curseur au survol */
+  font-size: inherit; /* S'assurer que la taille de police est cohérente */
+}
+
+/* Animation de néon pour la version PC */
+@media (min-width: 1024px) {
+  .footer p {
+    animation: neon-flicker 1.5s infinite alternate; /* Ajoute l'animation de néon */
+  }
+
+  .newsletter button {
+    animation: neon-flicker 1.5s infinite alternate; /* Ajoute l'animation de néon */
+  }
+
+  @keyframes neon-flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
