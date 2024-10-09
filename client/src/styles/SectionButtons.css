@@ -14,14 +14,14 @@
 }
 
 .section-buttons .button-card {
-  /* background-color: #fffbe7; */
   background-image: url("../assets/images/cover-bois2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 40%;
   text-align: center;
-  box-shadow: 2px 2px 2px 2px #bababa;
+  box-shadow: 1px 1px 5px 1px #bababa;
+  overflow: hidden;
 }
 
 .section-buttons .button-card > button {
@@ -31,9 +31,6 @@
   width: 110px;
   justify-content: center;
   background-color: #fffbe7;
-  /* background-image: url("../assets/images/cover-bois3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; */
   color: black;
   cursor: pointer;
   border-radius: 8px;
@@ -46,7 +43,7 @@
     gap: 0;
   }
   .section-buttons .button-card:hover {
-    transform: scale(1.003);
+    transform: scale(1.03);
   }
   .section-buttons .button-card {
     transform: scale(0.8);

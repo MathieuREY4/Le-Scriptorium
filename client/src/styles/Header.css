@@ -45,7 +45,6 @@
 }
 
 .login-card {
-  /* background-color: #5c3508; */
   color: #fff;
   text-transform: uppercase;
   padding: 30px;
@@ -55,7 +54,6 @@
   align-items: center;
   text-align: center;
   margin-bottom: 2rem;
-  /* box-shadow: 2px 2px 2px 2px #bababa; */
 }
 
 .login-field {
@@ -67,6 +65,11 @@
 
 .login-field h2 {
   margin: 1rem auto;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
 }
 
 .login-field label {
@@ -74,6 +77,11 @@
   text-align: center;
   font-size: 0.75rem;
   margin-right: 10px;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
 }
 
 .login-field input {
@@ -92,14 +100,21 @@
   margin-top: 20px;
   font-size: 1rem;
   color: #fff;
+  font-family: var(--title-font);
 }
 
 Header p {
+  font-family: var(--lorem-font);
   color: #fff;
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 5rem;
   width: 50rem;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
 }
 
 @media (min-width: 1024px) {
@@ -120,7 +135,12 @@ Header p {
     -webkit-text-fill-color: transparent;
     animation:
       wave 5s linear infinite,
-      fade 5s linear infinite;
+      fade 5s linear infinite,
+      burn-effect 5s linear infinite;
+    text-shadow:
+      0 0 5px rgba(255, 150, 0, 0.6),
+      0 0 10px rgba(255, 100, 0, 0.4),
+      0 0 15px rgba(255, 80, 0, 0.8);
   }
 
   @keyframes wave {
@@ -148,6 +168,30 @@ Header p {
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @keyframes burn-effect {
+    0% {
+      text-shadow:
+        0 0 5px rgba(255, 150, 0, 0.6),
+        0 0 10px rgba(255, 100, 0, 0.4),
+        0 0 15px rgba(255, 80, 0, 0.8);
+      filter: brightness(1);
+    }
+    50% {
+      text-shadow:
+        0 0 10px rgba(255, 200, 0, 1),
+        0 0 20px rgba(255, 150, 0, 0.9),
+        0 0 30px rgba(255, 100, 0, 0.8);
+      filter: brightness(1.2);
+    }
+    100% {
+      text-shadow:
+        0 0 5px rgba(255, 150, 0, 0.6),
+        0 0 10px rgba(255, 100, 0, 0.4),
+        0 0 15px rgba(255, 80, 0, 0.8);
+      filter: brightness(1);
     }
   }
 }

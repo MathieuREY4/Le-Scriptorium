@@ -1,0 +1,96 @@
+form.auth {
+  max-width: 500px; /* Réduction de la largeur du formulaire */
+  margin: 100px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow:
+    inset 0 0 10px rgba(0, 0, 0, 0.5),
+    0 0 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease;
+  position: relative; /* Nécessaire pour l'effet de néon */
+}
+
+/* Ajout de l'effet de néon */
+form.auth:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 0 20px rgba(255, 165, 0, 0.7),
+    /* Lueur externe orange */ inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+form.auth h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+form.auth section {
+  margin-bottom: 15px;
+}
+
+form.auth label {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+form.auth input {
+  width: 95%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+form.auth input:focus {
+  border-color: #8b4513;
+  outline: none;
+}
+
+form.auth button {
+  width: 100%;
+  padding: 12px;
+  background-color: #8b4513;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form.auth button:hover {
+  background-color: #a0522d;
+}
+
+form.auth button:active {
+  background-color: #5a3b1e;
+}
+
+form.auth::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.4);
+}

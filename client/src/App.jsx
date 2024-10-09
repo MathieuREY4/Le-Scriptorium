@@ -1,22 +1,15 @@
-import "./App.css";
-import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import SectionButtons from "./components/SectionButtons";
-import ArticleScrib from "./components/ArticleScrib";
-import BookCarousel from "./components/BookCarousel";
 import Footer from "./components/Footer";
 
-function App() {
+function Layout() {
   return (
-    <div className="app">
+    <div>
       <Navbar />
-      <Header />
-      <SectionButtons />
-      <ArticleScrib />
-      <BookCarousel />
+      <Outlet />
       <Footer />
     </div>
   );
 }
 
-export default App;
+export default Layout;

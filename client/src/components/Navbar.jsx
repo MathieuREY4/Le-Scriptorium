@@ -7,10 +7,6 @@ export default function Navbar() {
   const navigate = useNavigate();
   const authContext = useAuth();
 
-  const handleLogin = () => {
-    navigate("/login");
-  };
-
   const handleLogout = async () => {
     if (authContext?.logout) {
       try {
@@ -34,6 +30,10 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="nav-right">
+        {/* Nouveaux liens ajoutés ici */}
+        <Link to="/about">À propos</Link>
+        <Link to="/contact">Contact</Link>
+
         {authContext?.user ? (
           <>
             <button
@@ -52,12 +52,7 @@ export default function Navbar() {
             </Link>
           </>
         ) : (
-          <>
-            <Link to="/register">Inscription</Link>
-            <button type="button" onClick={handleLogin}>
-              Connexion
-            </button>
-          </>
+          <Link to="/register">Inscription</Link>
         )}
       </div>
     </nav>

@@ -1,0 +1,9 @@
+.home {
+  background: url(../assets/images/cover-bois.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  cursor:
+    url("../../client/src/assets/images/cursor2.png") 0 0,
+    auto;
+}

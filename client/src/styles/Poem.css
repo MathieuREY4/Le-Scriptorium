@@ -1,0 +1,207 @@
+.poems-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  background: url(../assets/images/cover-bois1.jpg);
+  background-size: cover;
+  object-fit: cover;
+}
+
+/* Poem card styles */
+.poem-card {
+  background-color: #fffbe7;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.poem-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.poem-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.read-more {
+  background-color: #5c3508;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.poem-author {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+/* Modal overlay and content */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.close-modal {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.CommentItem {
+  background-color: #fffbe7;
+  box-shadow: 2px 2px 2px 2px #bababa;
+  border-radius: 8px;
+  padding: 0.3em;
+  margin: 1rem;
+}
+
+.CommentItem button {
+  display: flex;
+  margin-left: 17rem;
+  color: red;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px #bababa;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.comments-section {
+  margin-top: 20px;
+}
+
+.add-comment {
+  margin-top: 10px;
+}
+
+.add-comment textarea {
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.add-comment button {
+  margin-top: 1rem;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px #bababa;
+  cursor: pointer;
+}
+
+.comment-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.comment-info img {
+  width: 20px;
+  height: 20px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Responsive design for larger screens */
+@media screen and (min-width: 768px) {
+  .poems-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .poem-card {
+    width: 250px;
+    height: 300px;
+  }
+
+  .poem-card:hover {
+    transform: scale(1.03);
+  }
+
+  .read-more:active {
+    transform: scale(1.03);
+  }
+
+  .add-comment button:active {
+    transform: scale(1.03);
+  }
+
+  .CommentItem button {
+    transform: scale(1.03);
+  }
+}

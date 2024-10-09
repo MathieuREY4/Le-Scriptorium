@@ -21,8 +21,9 @@
   min-width: 150px;
   max-width: 200px;
   height: 200px;
-  background-image: url(../assets/images/cover-bois3.jpg);
-  background-size: cover;
+  background-color: #fffbe7;
+  /* background-image: url(../assets/images/cover-bois3.jpg); */
+  /* background-size: cover; */
   padding: 20px;
   border-radius: 5px;
   text-align: center;
