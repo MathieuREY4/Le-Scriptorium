@@ -22,7 +22,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="nav-left">
         <Link to="/">Accueil</Link>
-        {authContext?.user && <Link to="/publish">Publier</Link>}
+        <Link to="/publish">Publier</Link>
       </div>
       <div className="nav-logo">
         <Link to="/">

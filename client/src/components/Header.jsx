@@ -47,7 +47,7 @@ export default function Header() {
       </div>
       <div className="header-text">
         <div className="header-title">
-          <h1>LE SCRIBLIUM</h1>
+          <h1>LE SCRIBTORIUM</h1>
         </div>
         <p>
           Le Scribliard est un amoureux des mots. La plume est le prolongement
