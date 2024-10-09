@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom"; // Importer useNavigate
+import { useNavigate } from "react-router-dom";
 import "../styles/SectionButtons.css";
 
 import romansImage from "../assets/images/romansImage.png";
@@ -9,24 +9,28 @@ import accountImage from "../assets/images/accountImage.png";
 import settingsImage from "../assets/images/settingsImage.png";
 
 export default function SectionButtons() {
-  const navigate = useNavigate(); // Initialiser useNavigate
+  const navigate = useNavigate();
 
   const goToPoemsPage = () => {
-    navigate("/poems"); // Naviguer vers la page des poèmes
+    navigate("/poems");
+  };
+  const goToBooksPage = () => {
+    navigate("/books");
   };
 
   return (
     <section className="section-buttons">
       <motion.div className="button-card" drag>
         <img src={romansImage} alt="Romans" />
-        <button type="button">Romans</button>
+        <button type="button" onClick={goToBooksPage}>
+          Romans
+        </button>
       </motion.div>
       <motion.div className="button-card" drag>
         <img src={poemsImage} alt="Poèmes" />
         <button type="button" onClick={goToPoemsPage}>
           Poèmes
         </button>{" "}
-        {/* Ajout de la fonction onClick */}
       </motion.div>
       <motion.div className="button-card" drag>
         <img src={quotesImage} alt="Citations" />

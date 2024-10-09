@@ -1,0 +1,140 @@
+.books-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  background: url(../assets/images/cover-bois1.jpg);
+  background-size: cover;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+/* Book card styles */
+.book-card-container {
+  background-color: #fffbe7;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 320px;
+  height: 900px; /* Augmentation de la hauteur */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacement flexible */
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-title-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book-cover-image {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+.book-genre-text {
+  font-size: 1em;
+  color: #555;
+}
+
+.book-synopsis-text {
+  font-size: 0.9em;
+  margin: 10px 0;
+  overflow: hidden; /* Cache le texte s'il est trop long */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Affiche seulement 3 lignes */
+  -webkit-box-orient: vertical;
+}
+
+.book-author-text {
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.book-detail-button {
+  background-color: #5c3508;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Modal overlay and content */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.close-modal-button {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Responsive design for larger screens */
+@media screen and (min-width: 768px) {
+  .books-page-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .book-card-container {
+    width: 250px;
+    height: 400px; /* Taille uniforme sur grands écrans */
+  }
+
+  .book-card-container:hover {
+    transform: scale(1.03);
+  }
+
+  .book-detail-button:active {
+    transform: scale(1.03);
+  }
+}

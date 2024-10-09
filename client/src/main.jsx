@@ -6,6 +6,7 @@ import { AuthProvider } from "./context/authContext";
 import App from "./App";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import BooksPage from "./pages/Books";
 import PoemsPage from "./pages/Poem";
 import Home from "./pages/Home";
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <SignUp />,
+      },
+      {
+        path: "/books",
+        element: <BooksPage />,
       },
       {
         path: "/poems",

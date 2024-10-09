@@ -19,8 +19,6 @@
 }
 
 * {
-  margin: 0;
-  box-sizing: border-box;
   cursor:
     url("../../src/assets/images/cursor2.png") 0 0,
     auto;
@@ -35,7 +33,6 @@ body,
   object-fit: cover;
   min-height: 100%;
   margin: 0;
-  /* background: var(--primary-white); */
   font-family: var(--title-font);
 }
 

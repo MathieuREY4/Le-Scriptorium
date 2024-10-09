@@ -7,7 +7,7 @@
   background-image: url(../assets/images/cover-bois2.jpg);
   background-size: cover;
   object-fit: cover;
-  color: #fff; /* Garder la couleur blanche pour les écrans mobiles */
+  color: #fff;
   font-size: 2rem;
 }
 
