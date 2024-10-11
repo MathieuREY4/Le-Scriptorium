@@ -18,11 +18,11 @@
   --lorem-font: "Montserrat";
 }
 
-* {
+/* * {
   cursor:
     url("../../src/assets/images/cursor2.png") 0 0,
     auto;
-}
+} */
 
 html,
 body,

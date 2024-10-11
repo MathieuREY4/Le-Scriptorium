@@ -38,6 +38,10 @@ About body {
   bottom: 0;
 }
 
+#pyramid {
+  height: 1090px;
+}
+
 section#about {
   position: relative;
   padding: 100px;

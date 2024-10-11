@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { AuthProvider } from "./context/authContext";
 import App from "./App";
+import Publish from "./pages/Publish";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import About from "./pages/About";
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "publish",
+        element: <Publish />,
       },
       {
         path: "/login",
