@@ -7,6 +7,7 @@ export default function SignUp() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
+    pseudo: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -31,7 +32,10 @@ export default function SignUp() {
         navigate("/login");
       }
     } catch (err) {
-      console.error("Erreur lors de l'inscription : ", err);
+      console.error(
+        "Erreur lors de l'inscription : ",
+        err.response?.data || err.message
+      );
     }
   };
 
@@ -48,6 +52,21 @@ export default function SignUp() {
             placeholder="Votre nom d'utilisateur..."
             value={formData.username}
             onChange={handleChange}
+            autoComplete="username"
+            required
+          />
+        </section>
+        <section>
+          <label htmlFor="pseudo">Pseudo</label>
+          <input
+            type="text"
+            name="pseudo"
+            id="pseudo"
+            placeholder="Votre pseudo..."
+            value={formData.pseudo}
+            onChange={handleChange}
+            autoComplete="off"
+            required
           />
         </section>
         <section>
@@ -59,6 +78,8 @@ export default function SignUp() {
             placeholder="Votre email..."
             value={formData.email}
             onChange={handleChange}
+            autoComplete="email"
+            required
           />
         </section>
         <section>
@@ -70,10 +91,12 @@ export default function SignUp() {
             placeholder="Votre mot de passe..."
             value={formData.password}
             onChange={handleChange}
+            autoComplete="new-password"
+            required
           />
         </section>
         <section>
-          <label htmlFor="confirmPassword">Confirmer le mot de passe</label>
+          <label htmlFor="confirm-password">Confirmer le mot de passe</label>
           <input
             type="password"
             name="confirmPassword"
@@ -81,6 +104,8 @@ export default function SignUp() {
             placeholder="Confirmez votre mot de passe..."
             value={formData.confirmPassword}
             onChange={handleChange}
+            autoComplete="new-password"
+            required
           />
         </section>
       </div>

@@ -1,11 +1,10 @@
 const jwt = require("jsonwebtoken");
-
 const tables = require("../../database/tables");
 
 const browse = async (req, res, next) => {
   try {
-    const books = await tables.book.readAll();
-    res.json(books);
+    const ratings = await tables.rating.readAll();
+    res.json(ratings);
   } catch (err) {
     next(err);
   }
@@ -13,11 +12,11 @@ const browse = async (req, res, next) => {
 
 const read = async (req, res, next) => {
   try {
-    const book = await tables.book.read(Number(req.params.id));
-    if (book == null) {
+    const rating = await tables.rating.read(Number(req.params.id));
+    if (rating == null) {
       res.sendStatus(404);
     } else {
-      res.json(book);
+      res.json(rating);
     }
   } catch (err) {
     next(err);
@@ -25,10 +24,10 @@ const read = async (req, res, next) => {
 };
 
 const edit = async (req, res, next) => {
-  const book = { ...req.body, id: req.params.id };
+  const rating = { ...req.body, id_rating: req.params.id };
 
   try {
-    await tables.book.update(book);
+    await tables.rating.update(rating);
     res.sendStatus(204);
   } catch (err) {
     next(err);
@@ -38,19 +37,16 @@ const edit = async (req, res, next) => {
 const add = async (req, res, next) => {
   try {
     const token = req.cookies.auth;
-
     const decodedToken = await jwt.decode(token);
-
     const userId = decodedToken.id;
 
-    req.body.userId = userId;
+    req.body.id_user = userId; // Ajout de l'ID utilisateur
 
-    console.info(userId);
-    console.info(req.body);
+    const result = await tables.rating.create(req.body);
 
-    const result = await tables.book.create(req.body);
-
-    res.status(201).send(`Livre ajouté avec succès. ID : ${result.insertId}`);
+    res
+      .status(201)
+      .send(`Évaluation ajoutée avec succès. ID : ${result.insertId}`);
   } catch (err) {
     next(err);
   }
@@ -58,7 +54,7 @@ const add = async (req, res, next) => {
 
 const destroy = async (req, res, next) => {
   try {
-    await tables.book.delete(req.params.id);
+    await tables.rating.delete(req.params.id);
     res.sendStatus(204);
   } catch (err) {
     next(err);

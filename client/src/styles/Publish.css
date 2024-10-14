@@ -14,96 +14,83 @@
   font-size: 2.1em;
 }
 
-/* Styles pour le formulaire de publication */
 .publish-form {
   display: flex;
-  flex-direction: column; /* Disposer les éléments en colonne */
+  flex-direction: column;
 }
 
-/* Styles pour chaque groupe de formulaire */
 .form-group {
-  margin-bottom: 15px; /* Espacement entre les groupes */
+  margin-bottom: 15px;
 }
 
-/* Styles pour les labels */
 label {
-  font-weight: bold; /* Mettre en gras les labels */
-  margin-bottom: 5px; /* Espacement sous les labels */
-  color: #333; /* Couleur du texte */
-  display: block; /* Afficher les labels comme des blocs */
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  display: block;
 }
 
-/* Styles spécifiques pour centrer l'importation d'image */
 .image-upload {
-  text-align: center; /* Centrer uniquement le contenu de l'importation d'image */
+  text-align: center;
 }
 
-/* Styles pour les inputs de texte et les textareas */
 input[type="text"],
 textarea {
-  width: calc(
-    100% - 20px
-  ); /* Réduire légèrement la largeur pour les placeholders */
-  padding: 10px; /* Espacement intérieur augmenté */
-  border: 1px solid #ccc; /* Bordure douce */
-  border-radius: 4px; /* Coins arrondis */
-  font-size: 14px; /* Taille de police */
-  box-sizing: border-box; /* Inclure la bordure et le padding dans la largeur */
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
-/* Styles pour les boutons d'importation d'image */
 input[type="file"] {
-  margin-top: 10px; /* Espacement au-dessus du bouton de fichier */
+  margin-top: 10px;
 }
 
-/* Styles pour les placeholders */
 input::placeholder,
 textarea::placeholder {
-  color: #999; /* Couleur des placeholders */
-  opacity: 1; /* S'assurer que le placeholder est visible */
-  font-size: 14px; /* Taille des placeholders légèrement augmentée */
+  color: #999;
+  opacity: 1;
+  font-size: 14px;
 }
 
-/* Styles pour les boutons de sélection */
 .publish-type-options {
-  display: flex; /* Disposition horizontale des groupes */
-  justify-content: space-around; /* Espace égal entre les groupes */
+  display: flex;
+  justify-content: space-around;
 }
 
 .publish-type {
   display: flex;
-  flex-direction: column; /* Afficher en colonne : bouton au-dessus, texte en dessous */
-  align-items: center; /* Centrer le contenu horizontalement */
+  flex-direction: column;
+  align-items: center;
 }
 
 .publish-type-button {
-  background: none; /* Enlever le fond par défaut des boutons */
-  border: none; /* Enlever la bordure */
-  cursor: pointer; /* Changer le curseur pour indiquer un clic */
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-/* Styles pour les boutons sélectionnés */
 .publish-type.selected {
-  background-color: #4caf50; /* Changer la couleur de fond à un vert */
-  color: white; /* Couleur du texte des boutons sélectionnés */
+  background-color: #4caf50;
+  color: white;
 }
 
-/* Styles pour les éléments <p> à l'intérieur des boutons */
 .publish-type p {
-  color: black; /* Couleur du texte pour les étiquettes */
-  margin: 5px 0 0; /* Pas de marge pour les étiquettes */
+  color: black;
+  margin: 5px 0 0;
 }
 
-/* Styles pour les boutons de soumission */
 .publish-container button {
-  padding: 10px; /* Espacement intérieur */
+  padding: 10px;
   width: 10rem;
   margin: 0 auto;
-  border: none; /* Pas de bordure */
-  border-radius: 4px; /* Coins arrondis */
-  color: white; /* Couleur du texte du bouton */
-  font-size: 16px; /* Taille de police */
-  cursor: pointer; /* Pointeur sur hover */
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .publish-container .btn-publish {
@@ -127,20 +114,20 @@ textarea::placeholder {
 .genre-suggestions {
   list-style: none;
   padding: 0;
-  display: flex; /* Affichage en ligne */
-  flex-wrap: wrap; /* Permet aux éléments de se déplacer à la ligne */
-  gap: 10px; /* Espacement entre les éléments */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .genre-suggestions li {
-  margin: 5px 0; /* Marges pour les éléments de la liste */
+  margin: 5px 0;
 }
 
 .selected-genres {
   margin-top: 10px;
   display: flex;
-  flex-wrap: wrap; /* Pour permettre aux éléments de se déplacer à la ligne */
-  gap: 5px; /* Optionnel : pour un espacement entre les éléments */
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .selected-genre {
@@ -156,5 +143,5 @@ textarea::placeholder {
 
 .remove-genre-icon {
   cursor: pointer;
-  margin-left: 8px; /* Espace entre le genre et la croix */
+  margin-left: 8px;
 }

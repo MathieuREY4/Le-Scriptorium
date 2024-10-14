@@ -1,6 +1,10 @@
 // Import the repository modules responsible for handling data operations on the tables
 const ItemRepository = require("./models/ItemRepository");
 const BookRepository = require("./models/BookRepository");
+const UserRepository = require("./models/UserRepository");
+const GenreRepository = require("./models/GenreRepository");
+const PoemRepository = require("./models/PoemRepository");
+const RatingRepository = require("./models/RatingRepository");
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
@@ -12,6 +16,10 @@ const tables = {};
 // Register each repository as data access point for its table
 tables.item = new ItemRepository();
 tables.book = new BookRepository();
+tables.poem = new PoemRepository();
+tables.rating = new RatingRepository();
+tables.genre = new GenreRepository();
+tables.user = new UserRepository();
 
 /* ************************************************************************* */
 

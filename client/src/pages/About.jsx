@@ -66,14 +66,21 @@ export default function About() {
           <div className="textBx">
             <h2 className="title">Bienvenue dans le SCRIBTORIUM</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-              magnam, itaque modi soluta deserunt, nemo reprehenderit ipsam
-              voluptas iure vero quod aperiam eaque delectus iusto rerum id!
-              Libero architecto, eos consequatur placeat maxime quas distinctio
-              blanditiis esse incidunt, explicabo ipsum quos exercitationem...
+              Plongez dans l’univers mystique du Scriptorium, où les mots
+              dansent sur le papyrus comme les ombres des pharaons sur les
+              fresques des temples. Ici, chaque lettre devient une clé, ouvrant
+              les portes de l’imaginaire et révélant les secrets enfouis dans
+              les méandres de l’écriture. L’Égypte, terre des ancêtres, nous
+              murmure des histoires millénaires. Ses hiéroglyphes, témoins d’une
+              sagesse perdue, nous invitent à explorer l'art de raconter. Au
+              Scriptorium, nous célébrons cette communion entre passé et
+              présent, entre le mystère et la création. Que vous soyez écrivain
+              en herbe ou poète aguerri, laissez votre plume s’envoler vers de
+              nouveaux horizons. Rejoignez-nous dans cette quête littéraire, où
+              chaque mot compte et où chaque histoire mérite d’être partagée.
             </p>
             <button className="btn" type="button">
-              Read More
+              Le Blog
             </button>
           </div>
           <div className="imgBx">

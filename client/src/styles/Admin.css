@@ -1,0 +1,134 @@
+.admin-container {
+  display: flex;
+  font-family: Arial, sans-serif;
+  background-color: #fffbe7;
+  border-radius: 8px;
+  margin: 5rem auto;
+  padding: 2rem;
+}
+
+.admin-menu {
+  width: 200px;
+  background-color: #5a3b1e;
+  border-radius: 8px;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+
+.admin-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.admin-menu button {
+  background: none;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.admin-menu button:hover {
+  background-color: #fffbe7;
+  color: #5a3b1e;
+}
+
+.admin-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.admin-content h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.admin-content .table {
+  display: flex;
+  flex-direction: column;
+  border-collapse: collapse;
+}
+
+.admin-content .table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.admin-content .table-cell {
+  flex: 1;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.admin-content .table-cell:active {
+  transform: scale(0.08);
+}
+
+.admin-content .delete-button {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-content .delete-button:hover {
+  background-color: #c9302c;
+}
+
+.admin-content .delete-button:active {
+  transform: scale(1.03);
+}
+
+.admin-content .online-indicator {
+  color: green;
+  margin-left: 10px;
+}
+
+.admin-content .blog-button {
+  display: flex;
+  background-color: #5a3b1e;
+  color: #fff;
+  border: none;
+  padding: 20px;
+  margin: 1rem auto;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.admin-content .blog-button:active {
+  transform: scale(1.03);
+}
+
+.admin-content input,
+.admin-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.admin-content textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Style pour l'icône d'œil */
+.admin-content .icon {
+  margin-left: 10px; /* Espace entre le titre et l'icône */
+  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+  width: 20px; /* Ajuste la largeur selon tes préférences */
+  height: 20px; /* Ajuste la hauteur selon tes préférences */
+}

@@ -88,10 +88,15 @@ section#about {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 30px;
+  border-radius: 8px;
   background: #792a0d;
   color: #fff;
   text-decoration: none;
   font-size: 1.1em;
   border: none;
   cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(1.03);
 }

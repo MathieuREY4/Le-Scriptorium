@@ -69,16 +69,17 @@ const createToken = async (req, res, next) => {
 
 // ---
 
-const verifyToken = (req, res, next) => {
+const verifyToken = async (req, res, next) => {
   try {
     const { auth } = req.cookies;
+    console.info("auth:", auth);
 
     if (!auth) {
       return res.status(401).json({ message: "Aucun token fourni." });
     }
 
     const verified = jwt.verify(auth, process.env.APP_SECRET);
-    req.user = verified;
+    req.user = await tables.user.readByEmail(verified.email);
     return next();
   } catch (error) {
     if (error.name === "JsonWebTokenError") {

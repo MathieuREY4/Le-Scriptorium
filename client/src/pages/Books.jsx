@@ -5,7 +5,6 @@ import "../styles/Book.css";
 
 export default function Books() {
   const books = useLoaderData();
-  console.info(books);
   const [selectedBook, setSelectedBook] = useState(null);
 
   const openModal = (book) => {
@@ -22,7 +21,7 @@ export default function Books() {
         <p>Aucun livre trouvé.</p>
       ) : (
         books.map((book) => (
-          <div className="book-card-container" key={book.id}>
+          <div className="book-card-container" key={book.id || book.title}>
             <h3 className="book-title-text">{book.title}</h3>
             <img
               className="book-cover-image"
@@ -32,7 +31,7 @@ export default function Books() {
               }
               alt={`Couverture de ${book.title}`}
             />
-            <p className="book-genre-text">{book.genre}</p>
+            <p className="book-genre-text">{book.genres}</p>
             <p className="book-synopsis-text">{book.synopsis}</p>
             <p className="book-author-text">
               - {book.author || "Auteur inconnu"}

@@ -117,6 +117,18 @@ Header p {
     2px 2px 0 #000;
 }
 
+.header .Conexion-button {
+  margin-top: 11rem;
+  padding: 2rem;
+  border: none;
+  background-color: #fffbe7;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  border-radius: 8px;
+  display: block;
+  align-self: flex-start;
+}
+
 @media (min-width: 1024px) {
   .header-text .header-title {
     text-align: center;

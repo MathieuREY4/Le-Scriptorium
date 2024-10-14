@@ -22,6 +22,7 @@
   text-align: center;
   box-shadow: 1px 1px 1px 1px #bababa;
   transition: box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 /* Effet néon au hover */

@@ -6,7 +6,10 @@ export default function BookModal({ book, closeModal }) {
       <div className="modal-content">
         <h2>{book.title}</h2>
         <img
-          src={book.coverImage || "https://via.placeholder.com/150"}
+          src={
+            `${import.meta.env.VITE_API_URL}/${book.cover_image}` ||
+            "https://via.placeholder.com/150"
+          }
           alt={`Couverture de ${book.title}`}
         />
         <p>{book.synopsis}</p>
@@ -25,7 +28,7 @@ export default function BookModal({ book, closeModal }) {
 BookModal.propTypes = {
   book: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    coverImage: PropTypes.string,
+    cover_image: PropTypes.string,
     synopsis: PropTypes.string.isRequired,
   }).isRequired,
   closeModal: PropTypes.func.isRequired,

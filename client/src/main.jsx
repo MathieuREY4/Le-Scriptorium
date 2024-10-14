@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import axios from "axios";
 
 import { AuthProvider } from "./context/authContext";
 import App from "./App";
@@ -10,10 +11,17 @@ import SignUp from "./pages/SignUp";
 import About from "./pages/About";
 import Books from "./pages/Books";
 import PoemsPage from "./pages/Poem";
+import Account from "./pages/Account";
+import Admin from "./pages/Admin";
 import Home from "./pages/Home";
 
 import "./styles/Main.css";
 import booksLoader from "./services/booksUsersLoader";
+
+const publishLoader = async () => {
+  const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/genre`);
+  return { genres: response.data };
+};
 
 const router = createBrowserRouter([
   {
@@ -27,6 +35,7 @@ const router = createBrowserRouter([
       {
         path: "publish",
         element: <Publish />,
+        loader: publishLoader,
       },
       {
         path: "/login",
@@ -48,6 +57,14 @@ const router = createBrowserRouter([
       {
         path: "/poems",
         element: <PoemsPage />,
+      },
+      {
+        path: "/account",
+        element: <Account />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
       },
     ],
   },

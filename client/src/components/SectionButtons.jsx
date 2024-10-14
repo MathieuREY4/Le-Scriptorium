@@ -17,6 +17,12 @@ export default function SectionButtons() {
   const goToBooksPage = () => {
     navigate("/books");
   };
+  const goToAccountsPage = () => {
+    navigate("/account");
+  };
+  const goToAdminPage = () => {
+    navigate("/admin");
+  };
 
   return (
     <section className="section-buttons">
@@ -38,11 +44,15 @@ export default function SectionButtons() {
       </motion.div>
       <motion.div className="button-card" drag>
         <img src={accountImage} alt="Mon compte" />
-        <button type="button">Mon compte</button>
+        <button type="button" onClick={goToAccountsPage}>
+          Mon compte
+        </button>
       </motion.div>
       <motion.div className="button-card" drag>
-        <img src={settingsImage} alt="Paramètres" />
-        <button type="button">Paramètres</button>
+        <img src={settingsImage} alt="Admin" />
+        <button type="button" onClick={goToAdminPage}>
+          Admin
+        </button>
       </motion.div>
     </section>
   );

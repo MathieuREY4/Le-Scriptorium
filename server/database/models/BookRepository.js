@@ -7,11 +7,11 @@ class bookRepository extends AbstractRepository {
 
   async create(book) {
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (title, cover_image, genre, synopsis, purchase_link, id_user) VALUES (?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (title, cover_image, id_genre, synopsis, purchase_link, id_user) VALUES (?, ?, ?, ?, ?, ?)`,
       [
         book.title,
         book.cover_image,
-        book.genre,
+        book.id_genre,
         book.synopsis,
         book.purchase_link,
         book.user_id,
@@ -23,14 +23,17 @@ class bookRepository extends AbstractRepository {
   async readAll() {
     try {
       const query = `
-        SELECT id_book, title, cover_image, genre, synopsis 
-        FROM ${this.table}`;
+        SELECT b.id_book, b.title, b.cover_image, b.synopsis, GROUP_CONCAT(g.name) as genres
+        FROM ${this.table} b
+        LEFT JOIN book bg ON b.id_book = bg.id_book
+        LEFT JOIN genre g ON bg.id_genre = g.id_genre
+        GROUP BY b.id_book`;
 
       const [rows] = await this.database.query(query);
-      return rows; // Renvoie les résultats de la requête
+      return rows;
     } catch (error) {
-      console.error("Error reading books:", error); // Journalise les erreurs éventuelles
-      throw new Error("Could not retrieve books"); // Lance une erreur si la requête échoue
+      console.error("Error reading books:", error);
+      throw new Error("Could not retrieve books");
     }
   }
 
@@ -44,11 +47,11 @@ class bookRepository extends AbstractRepository {
 
   async update(book) {
     const [result] = await this.database.query(
-      `UPDATE ${this.table} SET title = ?, cover_image = ?, genre = ?, synopsis = ?, purchase_link = ?, id_user = ? WHERE id_book = ?`,
+      `UPDATE ${this.table} SET title = ?, cover_image = ?, id_genre = ?, synopsis = ?, purchase_link = ?, id_user = ? WHERE id_book = ?`,
       [
         book.title,
         book.cover_image,
-        book.genre,
+        book.id_genre,
         book.synopsis,
         book.purchase_link,
         book.user_id,

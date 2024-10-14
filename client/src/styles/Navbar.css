@@ -14,6 +14,7 @@
   display: flex;
   align-items: center;
   flex: 1;
+  padding-right: 60px;
 }
 
 .nav-logo {
@@ -28,6 +29,7 @@
   gap: 20px;
   flex: 1;
   justify-content: flex-end;
+  padding-right: 50px;
 }
 
 .nav-logo img {
@@ -63,6 +65,35 @@
 
 .navbar a:active {
   transform: scale(1.03);
+}
+
+.logout-button {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 165, 0, 1) 0%,
+    rgba(255, 80, 0, 1) 50%,
+    rgba(255, 165, 0, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow:
+    0 0 5px rgba(255, 165, 0, 1),
+    0 0 10px rgba(255, 165, 0, 1),
+    0 0 15px rgba(255, 80, 0, 1),
+    0 0 20px rgba(255, 30, 0, 1);
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+.logout-button:hover {
+  animation: shake 0.3s ease-in-out;
 }
 
 @media (min-width: 1024px) {

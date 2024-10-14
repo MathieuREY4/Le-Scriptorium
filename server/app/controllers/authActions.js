@@ -12,7 +12,8 @@ const checkAuth = async (req, res, next) => {
       const decode = jwt.verify(auth, process.env.APP_SECRET);
       if (!decode) res.sendStatus(401);
       else {
-        const user = await tables.user.read(decode.id_user);
+        const user = await tables.user.readByEmail(decode.email);
+
         res.status(200).json({
           id_user: user.id_user,
           pseudo: user.pseudo,

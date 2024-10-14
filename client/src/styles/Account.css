@@ -1,0 +1,132 @@
+.account-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  margin: 5rem auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fffbe7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.account-container:hover {
+  box-shadow:
+    0 0 20px rgba(255, 165, 0, 0.7),
+    inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.account-container .user-profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.account-container .user-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.account-container .user-avatar:hover {
+  transform: scale(1.05);
+}
+
+.account-container .user-profile h2 {
+  margin: 10px 0;
+  font-family: var(--title-font);
+  font-size: 1.5em;
+  color: #333;
+}
+
+.account-container .user-profile p {
+  margin: 5px 0;
+  font-family: var(--lorem-font);
+  color: #666;
+}
+
+.account-container button {
+  background-color: #5a3b1e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.account-container .user-works {
+  width: 100%;
+}
+
+.account-container .works-category {
+  margin-top: 20px;
+}
+
+.account-container .works-category h4 {
+  font-size: 1.2em;
+  font-family: var(--title-font);
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.account-container .works-category ul {
+  list-style-type: none;
+  font-family: var(--lorem-font);
+  padding: 0;
+}
+
+.account-container .works-category li {
+  background-color: #e9ecef;
+  display: flex;
+  width: 500px;
+  height: auto;
+  margin: 5px auto;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.account-container .works-category li:hover {
+  background-color: #d6d8db;
+}
+
+.account-container .works-category li:active {
+  transform: scale(1.03);
+}
+
+.account-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-container form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.account-container form button[type="submit"] {
+  background-color: #28a745;
+}
+
+.account-container form button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.account-container form button[type="button"] {
+  background-color: #dc3545;
+  margin-top: 5px;
+}
+
+.account-container form button[type="button"]:hover {
+  background-color: #c82333;
+}

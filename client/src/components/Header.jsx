@@ -1,50 +1,85 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 import "../styles/Header.css";
 
 export default function Header() {
-  const [pseudo, setPseudo] = useState("");
-  const [password, setPassword] = useState("");
-  const authContext = useAuth();
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [showLogin, setShowLogin] = useState(false); // Pour afficher/masquer le formulaire de connexion
 
-  const handleLogin = async () => {
-    if (authContext?.login) {
-      try {
-        await authContext.login(pseudo, password);
-      } catch (err) {
-        console.error("Erreur lors de la connexion:", err);
-      }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await login(formData);
+      setError("");
+      navigate("/");
+    } catch (err) {
+      console.error("Erreur lors de la connexion : ", err);
+      setError("La connexion a échoué. Vérifiez vos identifiants");
     }
   };
 
   return (
     <header className="header">
-      <div className="login-card">
-        <div className="login-field">
-          <h2>Connexion</h2>
-        </div>
-        <div className="login-field">
-          <label htmlFor="pseudo">Pseudo</label>
-          <input
-            type="text"
-            id="pseudo"
-            value={pseudo}
-            onChange={(e) => setPseudo(e.target.value)}
-          />
-        </div>
-        <div className="login-field">
-          <label htmlFor="password">Mot de passe</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button className="login-button" type="button" onClick={handleLogin}>
-          Go
-        </button>
-      </div>
+      <button
+        className="Conexion-button"
+        type="button"
+        onClick={() => setShowLogin(!showLogin)}
+      >
+        {showLogin ? "Annuler" : "Connexion"}
+      </button>
+
+      {showLogin && (
+        <form className="auth" onSubmit={handleSubmit}>
+          <h1>Connexion</h1>
+          <div>
+            <section>
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Votre email..."
+                value={formData.email}
+                onChange={handleChange}
+                required // Ajout de l'attribut required
+              />
+            </section>
+            <section>
+              <label htmlFor="password">Mot de passe</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Votre mot de passe..."
+                value={formData.password}
+                onChange={handleChange}
+                required // Ajout de l'attribut required
+              />
+            </section>
+            {error && <p className="error">{error}</p>}
+          </div>
+          <button type="submit">Je me connecte</button>
+          <Link to="/connexion?forgot=true">
+            J'ai oublié mon mot de passe...
+          </Link>
+        </form>
+      )}
+
       <div className="header-text">
         <div className="header-title">
           <h1>LE SCRIBTORIUM</h1>

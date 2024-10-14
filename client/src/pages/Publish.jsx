@@ -1,32 +1,11 @@
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import axios from "axios";
+
 import "../styles/Publish.css";
 import iconbook from "../assets/images/icon-book.png";
 import iconPoem from "../assets/images/icon-poem.png";
 import iconCitation from "../assets/images/icon-citation.png";
-
-const genresList = [
-  "Science-fiction",
-  "Fantasy",
-  "Horreur",
-  "Romance",
-  "Thriller",
-  "Drame",
-  "Aventure",
-  "Mystère",
-  "Historique",
-  "Biographie",
-  "Dystopie",
-  "Polar",
-  "Comédie",
-  "Young Adult (YA)",
-  "Contemporain",
-  "Surnaturel",
-  "Western",
-  "Essai",
-  "Guerre",
-  "Chick Lit",
-  "Mémoires",
-];
 
 export default function Publish() {
   const [selectedType, setSelectedType] = useState("roman");
@@ -38,6 +17,8 @@ export default function Publish() {
     link: "",
     coverImage: null,
   });
+  const { genres } = useLoaderData();
+  console.info(genres);
 
   const [genreInput, setGenreInput] = useState("");
 
@@ -61,8 +42,8 @@ export default function Publish() {
 
   const handleGenreSelect = (genre) => {
     const newGenres = formData.genres.includes(genre)
-      ? formData.genres.filter((g) => g !== genre) // Retire le genre
-      : [...formData.genres, genre]; // Ajoute le genre
+      ? formData.genres.filter((g) => g !== genre)
+      : [...formData.genres, genre];
 
     updateFormData("genres", newGenres);
   };
@@ -73,7 +54,7 @@ export default function Publish() {
       if (!formData.genres.includes(newGenre)) {
         updateFormData("genres", [...formData.genres, newGenre]);
       }
-      setGenreInput(""); // Réinitialise la barre de recherche
+      setGenreInput("");
     }
   };
 
@@ -82,9 +63,37 @@ export default function Publish() {
     updateFormData("genres", newGenres);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Ajoutez ici la logique pour soumettre le formulaire
+    console.info(formData);
+    const form = new FormData();
+
+    form.append("title", formData.title);
+    form.append("text", formData.text);
+    form.append("synopsis", formData.synopsis);
+    form.append("genre", JSON.stringify(formData.genres));
+    form.append("file", formData.coverImage);
+
+    const translateObject = {
+      roman: "book",
+      poem: "poem",
+      citation: "rating",
+    };
+
+    const response = await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/${translateObject[selectedType]}`,
+      form,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        withCredentials: true,
+      }
+    );
+
+    console.info(response);
+
+    console.info("Form: ", form);
   };
 
   return (
@@ -143,24 +152,24 @@ export default function Publish() {
             id="genre"
             value={genreInput}
             onChange={handleGenreChange}
-            onKeyPress={handleKeyPress} // Ajout de l'écouteur pour la touche "Entrée"
+            onKeyPress={handleKeyPress}
             placeholder="Cherchez un genre..."
           />
-          {genreInput && ( // Affiche uniquement si la barre de recherche n'est pas vide
+          {genreInput && (
             <ul className="genre-suggestions">
-              {genresList
+              {genres
                 .filter((genre) =>
-                  genre.toLowerCase().includes(genreInput.toLowerCase())
+                  genre.name.toLowerCase().includes(genreInput.toLowerCase())
                 )
                 .map((genre) => (
-                  <li key={genre}>
+                  <li key={genre.id}>
                     <label>
                       <input
                         type="checkbox"
-                        checked={formData.genres.includes(genre)}
-                        onChange={() => handleGenreSelect(genre)}
+                        checked={formData.genres.includes(genre.name)}
+                        onChange={() => handleGenreSelect(genre.name)}
                       />
-                      {genre}
+                      {genre.name}
                     </label>
                   </li>
                 ))}
@@ -171,8 +180,8 @@ export default function Publish() {
               <span key={genre} className="selected-genre">
                 {genre}
                 <span
-                  onClick={() => handleGenreRemove(genre)} // Ajout de la fonction pour supprimer un genre
-                  className="remove-genre-icon" // Classe CSS pour styliser l'icône de suppression
+                  onClick={() => handleGenreRemove(genre)}
+                  className="remove-genre-icon"
                   role="button"
                   tabIndex={0}
                   onKeyPress={(e) =>
